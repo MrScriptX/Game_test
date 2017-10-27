@@ -1,20 +1,18 @@
-#include <stdio.h>
-#include <SFML\OpenGL.hpp>
-#include <SFML\Graphics.hpp>
+#include "application.h"
+#include "server.h"
+
+#define WIDTH_WIN 1280
+#define HEIGHT_WIN 720
 
 int main()
 {
-	sf::RenderWindow mainWindow(sf::VideoMode(800, 600), "Window");
+	int port = 0;
+	std::cin >> port;
 
-	while (mainWindow.isOpen())
-	{
-		sf::Event event;
-		while (mainWindow.pollEvent(event))
-		{
-			if (event.type == sf::Event::Closed)
-				mainWindow.close();
-		}
+	Server server(port);
 
-		mainWindow.display();
-	}
+	//sf::RenderWindow mainWindow(sf::VideoMode(WIDTH_WIN, HEIGHT_WIN), "Window");
+	//Game_loop(&mainWindow);
+
+	
 }
