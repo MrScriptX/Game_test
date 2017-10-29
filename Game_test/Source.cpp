@@ -11,6 +11,11 @@ int main()
 
 	Server server(port);
 
+	while (1)
+	{
+		server.ListenToClient();
+	}
+
 	//sf::RenderWindow mainWindow(sf::VideoMode(WIDTH_WIN, HEIGHT_WIN), "Window");
 	//Game_loop(&mainWindow);
 
